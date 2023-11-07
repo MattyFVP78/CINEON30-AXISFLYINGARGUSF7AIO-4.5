@@ -1,0 +1,125 @@
+defaults nosave
+
+
+# version
+# Betaflight / STM32F7X2 (S7X2) 4.5.0 Jun  5 2023 / 13:10:11 (f3fab663d) MSP API: 1.46
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name AXISFLYINGARGUSF7AIO
+manufacturer_id AXFL
+mcu_id 0054002b3532510639323431
+signature 
+
+# name: CINEON C30
+
+# feature
+feature GPS
+feature OSD
+
+# serial
+serial 1 64 115200 57600 0 115200
+serial 3 2 115200 115200 0 115200
+serial 5 131073 115200 57600 0 115200
+
+# map
+map TAER1234
+
+# aux
+aux 0 0 1 900 1300 0 0
+aux 1 1 2 1700 2100 0 0
+aux 2 2 2 1300 1700 0 0
+aux 3 13 1 1300 1700 0 0
+
+# master
+set dyn_notch_count = 1
+set dyn_notch_q = 500
+set gyro_lpf1_dyn_min_hz = 0
+set gyro_lpf1_dyn_max_hz = 625
+set acc_calibration = -4,-13,7,1
+set serialrx_provider = CRSF
+set blackbox_sample_rate = 1/2
+set dshot_bidir = ON
+set motor_output_reordering = 2,3,0,1,4,5,6,7
+set failsafe_procedure = GPS-RESCUE
+set align_board_roll = 180
+set yaw_motors_reversed = ON
+set small_angle = 180
+set gps_rescue_allow_arming_without_fix = ON
+set simplified_gyro_filter = OFF
+set osd_rssi_pos = 2544
+set osd_link_quality_pos = 499
+set osd_rssi_dbm_pos = 400
+set osd_craft_name_pos = 32
+set osd_gps_sats_pos = 2075
+set osd_home_dir_pos = 2063
+set osd_home_dist_pos = 2065
+set osd_warnings_pos = 14635
+set osd_avg_cell_voltage_pos = 480
+set osd_battery_usage_pos = 483
+set osd_displayport_device = MSP
+set debug_mode = GYRO_SCALED
+set vcd_video_system = HD
+set gyro_1_sensor_align = CW180
+set gyro_1_align_yaw = 1800
+set craft_name = CINEON C30
+
+profile 0
+
+# profile 0
+set dterm_lpf1_dyn_min_hz = 80
+set dterm_lpf1_dyn_max_hz = 221
+set dterm_lpf1_static_hz = 82
+set p_pitch = 62
+set i_pitch = 110
+set d_pitch = 37
+set f_pitch = 137
+set p_roll = 59
+set i_roll = 105
+set d_roll = 33
+set f_roll = 132
+set p_yaw = 59
+set i_yaw = 105
+set f_yaw = 132
+set d_min_roll = 33
+set d_min_pitch = 37
+set dyn_idle_min_rpm = 35
+set simplified_master_multiplier = 110
+set simplified_pi_gain = 120
+set simplified_dmax_gain = 0
+set simplified_dterm_filter = OFF
+set simplified_dterm_filter_multiplier = 110
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set roll_expo = 50
+set pitch_expo = 50
+set yaw_expo = 50
+set roll_srate = 65
+set pitch_srate = 65
+set yaw_srate = 65
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
